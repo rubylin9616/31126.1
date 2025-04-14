@@ -1,5 +1,5 @@
 //https://script.google.com/macros/s/AKfycbzWF2iYrp7gQxxDeQmmTRxDfLClRGIL5twTiFsMEYbfYhSBZu-cTMOsPA4at8qyX3GoIw/exec
-const apiUrl = "https://script.google.com/macros/s/AKfycbzWF2iYrp7gQxxDeQmmTRxDfLClRGIL5twTiFsMEYbfYhSBZu-cTMOsPA4at8qyX3GoIw/exec"; // 替換為你的 API 網址
+const apiUrl = "https://script.google.com/macros/s/AKfycbzIDZd0wOtr_80qWOhiYXJfpUlA933FdEwks60FlwSM3Ep_cXA3-Fn1S314oTfaKRaKaQ/exec"; // 替換為你的 API 網址
 
 const form = document.getElementById("recordForm");
 const recordsContainer = document.getElementById("records");
