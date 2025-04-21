@@ -54,6 +54,23 @@ form.addEventListener("submit", async function (event) {
     // **重新載入紀錄，確保新資料即時顯示**
     setTimeout(loadRecords, 2000); // 等 2 秒後重新載入資料
 });
+function doGet(e) {
+    const sheet = SpreadsheetApp.openById("//https://script.google.com/macros/s/AKfycbzWF2iYrp7gQxxDeQmmTRxDfLClRGIL5twTiFsMEYbfYhSBZu-cTMOsPA4at8qyX3GoIw/exec").getActiveSheet();
+    const records = sheet.getDataRange().getValues();
+
+    if (e.parameter.id) {
+        // 刪除紀錄
+        const id = e.parameter.id; // 假設 ID 是唯一的
+        const rowIndex = records.findIndex(row => row[0] === id); // 假設 ID 在第一列
+        if (rowIndex > -1) {
+            sheet.deleteRow(rowIndex + 1); // 刪除對應的行
+            return ContentService.createTextOutput("紀錄已刪除");
+        }
+    }
+
+    // 其他 GET 請求的處理邏輯
+    return ContentService.createTextOutput(JSON.stringify(records));
+}
 
 // **網頁載入時自動載入記帳紀錄**
 window.addEventListener("load", loadRecords);
